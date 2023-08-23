@@ -1,0 +1,22 @@
+spring:
+  h2.console:
+     enabled: true
+     settings:
+        web-allow-others: true
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+    initialize: false
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    show-sql: true
+  allowed:
+    resources: /h2-console/**
+
+logging.level.org.hibernate:
+   SQL: debug
+   type.descriptor.sql: trace
+   org.springframework.web: DEBUG
