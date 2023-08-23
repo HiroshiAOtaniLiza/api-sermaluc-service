@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public AuthResponse saveUser(UserRequest request) {
 		User user = User.builder().id(request.getId()).email(request.getEmail()).lastname(request.getLastname())
-				.name(request.getName()).password(passwordEncoder.encode( request.getPassword())).role(request.getRole()).build();
+				.name(request.getName()).password(passwordEncoder.encode( request.getPassword())).build();
 
 		userDao.save(user);
 
