@@ -1,9 +1,5 @@
 package com.sermaluc.service.bean;
 
-import com.sermaluc.service.enums.Role;
-
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,7 +21,6 @@ public class UserRequest {
 	
 	private String password;
 	
-	@Enumerated(EnumType.STRING)
-	private Role role;
+	private Integer featureId;
 	
 }

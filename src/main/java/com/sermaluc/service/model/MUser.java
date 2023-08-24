@@ -29,7 +29,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements UserDetails {
+public class MUser implements UserDetails {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -50,7 +50,7 @@ public class User implements UserDetails {
 	private String password;
 	
 	@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Feature feature;
+    private MFeature feature;
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

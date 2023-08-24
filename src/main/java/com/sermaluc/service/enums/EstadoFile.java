@@ -1,6 +1,6 @@
 package com.sermaluc.service.enums;
 
-public enum Estados {
+public enum EstadoFile {
 
 	PROCESO_VALIDACION,
 	PROCESADO_OK,

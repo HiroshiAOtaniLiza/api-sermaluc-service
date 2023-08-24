@@ -4,13 +4,13 @@ import java.util.List;
 
 import com.sermaluc.service.bean.AuthResponse;
 import com.sermaluc.service.bean.UserRequest;
-import com.sermaluc.service.model.User;
+import com.sermaluc.service.model.MUser;
 
 public interface UserService {
 	
-	List<User> AllUsers();
+	List<MUser> AllUsers();
 	
-	User getUser(Integer id);
+	MUser getUser(Integer id);
 	
 	AuthResponse saveUser(UserRequest user);
 

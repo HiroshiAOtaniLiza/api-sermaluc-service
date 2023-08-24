@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sermaluc.service.bean.AuthResponse;
 import com.sermaluc.service.bean.LoginRequest;
 import com.sermaluc.service.bean.UserRequest;
-import com.sermaluc.service.model.User;
+import com.sermaluc.service.model.MUser;
 import com.sermaluc.service.service.AuthService;
 import com.sermaluc.service.service.UserService;
 
@@ -29,29 +29,29 @@ public class AuthController {
 	private final UserService userService;
 	private final AuthService authService;
 	
-	@PostMapping(value = "login")
+	@PostMapping(value = "/login")
 	public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
 		return ResponseEntity.ok(authService.login(request));
 	}
 	
-	@PostMapping("save")
+	@PostMapping("/save")
 	public ResponseEntity<AuthResponse> saveUser(@RequestBody UserRequest user) {
 		return ResponseEntity.ok(userService.saveUser(user));
 	}
 	
-	@DeleteMapping("delete/{id}")
+	@DeleteMapping("/delete/{id}")
 	public String deleteUser(@PathVariable Integer id) {
 		userService.deleteUser(id);
 		return "User deleted..";
 	}
 	
-	@PatchMapping("getAll")
-	public List<User> getAll() {
+	@PatchMapping("/getAll")
+	public List<MUser> getAll() {
 		return userService.AllUsers();
 	}
 	
-	@GetMapping("get/{id}")
-	public User getUserById(@PathVariable Integer id) {
+	@GetMapping("/get/{id}")
+	public MUser getUserById(@PathVariable Integer id) {
 		return userService.getUser(id);
 	}
 	
