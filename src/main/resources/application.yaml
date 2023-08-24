@@ -15,6 +15,8 @@ spring:
     show-sql: true
   allowed:
     resources: /h2-console/**
+  servlet.multipart.max-file-size: 2MB
+  servlet.multipart.max-request-size: 2MB
 
 logging.level.org.hibernate:
    SQL: debug
