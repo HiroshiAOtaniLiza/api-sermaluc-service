@@ -81,8 +81,7 @@ public class FileServiceImpl implements FileService {
 				Files.copy(archivo.getInputStream(), rutaArchivo);
 			} catch (IOException e) {
 				return new ResponseEntity<>(
-						ErrorResponse.builder().message("Error al subir el archivo: " + nombreArchivo).code("500")
-								.error(e.getMessage().concat(": ").concat(e.getCause().getMessage())).build(),
+						ErrorResponse.builder().message("Error al subir el archivo: " + nombreArchivo).code("500").build(),
 						HttpStatus.INTERNAL_SERVER_ERROR);
 			}
 
