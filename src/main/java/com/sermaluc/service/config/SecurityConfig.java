@@ -34,7 +34,7 @@ public class SecurityConfig {
 						.disable())
 				.authorizeHttpRequests(
 						authRequest -> authRequest.requestMatchers(new AntPathRequestMatcher("/h2-console/**"),
-								mvc.pattern("/auth/**"), mvc.pattern("/resources/**")).permitAll().anyRequest()
+								mvc.pattern("/doc/**"), mvc.pattern("/v3/api-docs/**"), mvc.pattern("/auth/**"), mvc.pattern("/resources/**")).permitAll().anyRequest()
 								.authenticated())
 				.sessionManagement(
 						sessionManager -> sessionManager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
