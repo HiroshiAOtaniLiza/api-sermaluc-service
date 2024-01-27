@@ -17,7 +17,6 @@ import java.util.Optional;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import com.sermaluc.service.dao.FileRecordRepository;
 import com.sermaluc.service.dao.FileRepository;
 import com.sermaluc.service.enums.ErrorSeverity;
 import com.sermaluc.service.enums.EstadoFile;

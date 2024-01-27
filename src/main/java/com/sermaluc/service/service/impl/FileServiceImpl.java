@@ -22,7 +22,6 @@ import com.sermaluc.service.dao.FileRecordRepository;
 import com.sermaluc.service.dao.FileRepository;
 import com.sermaluc.service.enums.EstadoFile;
 import com.sermaluc.service.model.MFile;
-import com.sermaluc.service.model.MFileRecord;
 import com.sermaluc.service.service.FileService;
 import com.sermaluc.service.service.RegistroAsyncService;
 

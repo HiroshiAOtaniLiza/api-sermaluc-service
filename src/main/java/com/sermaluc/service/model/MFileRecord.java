@@ -1,6 +1,5 @@
 package com.sermaluc.service.model;
 
-import com.sermaluc.service.bean.EstadoArchivoDto;
 import com.sermaluc.service.bean.NokDto;
 import com.sermaluc.service.enums.CampoFileRecord;
 import com.sermaluc.service.enums.ErrorSeverity;

@@ -7,7 +7,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.sermaluc.service.bean.EstadoArchivoDto;
 import com.sermaluc.service.model.MFile;
-import com.sermaluc.service.model.MFileRecord;
 
 public interface FileService {
 	

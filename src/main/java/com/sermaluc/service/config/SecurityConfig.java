@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authorization.AuthorityAuthorizationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -14,7 +13,6 @@ import org.springframework.security.web.servlet.util.matcher.MvcRequestMatcher;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 
-import com.sermaluc.service.enums.Role;
 import com.sermaluc.service.jwt.JwtAuthenticationFilter;
 
 import lombok.RequiredArgsConstructor;
@@ -33,8 +31,11 @@ public class SecurityConfig {
 				.csrf(csrf -> csrf
 						.disable())
 				.authorizeHttpRequests(
-						authRequest -> authRequest.requestMatchers(new AntPathRequestMatcher("/h2-console/**"),
-								mvc.pattern("/doc/**"), mvc.pattern("/v3/api-docs/**"), mvc.pattern("/auth/**"), mvc.pattern("/resources/**")).permitAll().anyRequest()
+						authRequest -> authRequest
+										.requestMatchers(new AntPathRequestMatcher("/h2-console/**"),
+												new AntPathRequestMatcher("/doc/**"), new AntPathRequestMatcher("/v3/api-docs/**"), mvc.pattern("/auth/**"), mvc.pattern("/resources/**"))
+										.permitAll()
+										.anyRequest()
 								.authenticated())
 				.sessionManagement(
 						sessionManager -> sessionManager.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
