@@ -1,5 +1,6 @@
 package com.sermaluc.service.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,15 +11,17 @@ import com.sermaluc.service.bean.LoginRequest;
 import com.sermaluc.service.dao.UserRepository;
 import com.sermaluc.service.service.AuthService;
 
-import lombok.RequiredArgsConstructor;
-
 @Service
-@RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
 
-	private final JwtService jwtService;
-	private final UserRepository userRepository;
-	private final AuthenticationManager authenticationManager;
+	@Autowired
+	private JwtService jwtService;
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Autowired
+	private AuthenticationManager authenticationManager;
 	
 	@Override
 	public AuthResponse login(LoginRequest request) {
